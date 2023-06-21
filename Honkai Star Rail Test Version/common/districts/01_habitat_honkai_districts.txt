@@ -26,8 +26,9 @@ district_honkai_city = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 5
+		planet_housing_add = 8
 		planet_max_buildings_add = 1
+		job_clerk_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -88,11 +89,7 @@ district_honkai_city = {
 	}
 
 	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		text = job_clerk_effect_desc
+		text = xianzhou_clerk_text
 	}
 }
 
@@ -125,7 +122,7 @@ district_honkai_industrial = {
 
 	planet_modifier = {
 		planet_housing_add = 4
-		job_fabricator_add = 2
+		job_foundry_add = 2
 		job_artisan_add = 2
 	}
 
@@ -152,15 +149,7 @@ district_honkai_industrial = {
 
 	
 	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-				is_catalytic_empire = no
-			}
-			NOT = { has_designation = col_factory }
-		}
-		text = job_foundry_effect_desc
+		text = xianzhou_artisan_text
 	}
 }
 
@@ -172,9 +161,7 @@ district_honkai_mining = {
 	expansion_planner = yes
 
 	base_buildtime = 240
-
-	min_for_deposits_on_planet = 1
-	max_for_deposits_on_planet = 15
+	is_capped_by_modifier = no
 
 	potential = { uses_district_set = habitat_honkai }
 
@@ -219,9 +206,7 @@ district_honkai_generator = {
 	expansion_planner = yes
 
 	base_buildtime = 240
-
-	min_for_deposits_on_planet = 3
-	max_for_deposits_on_planet = 15
+	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
 		uses_district_set = habitat_honkai
@@ -254,10 +239,9 @@ district_honkai_generator = {
 ###################################
 district_honkai_farming = {
 	expansion_planner = yes
-	base_buildtime = 240
 
-	min_for_deposits_on_planet = 3
-	max_for_deposits_on_planet = 15
+	base_buildtime = 240
+	is_capped_by_modifier = no
 
 	potential = { uses_district_set = habitat_honkai }
 
